@@ -771,8 +771,6 @@ declare_class!(
         fn pressure_change_with_event(&self, event: &NSEvent) {
             trace_scope!("pressureChangeWithEvent:");
 
-            self.mouse_motion(event);
-
             self.queue_event(WindowEvent::TouchpadPressure {
                 device_id: DEVICE_ID,
                 pressure: event.pressure(),
